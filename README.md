@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/pk1z/skyeng_test.svg?branch=master)](https://travis-ci.org/pk1z/skyeng_test)
 [![codecov](https://codecov.io/gh/pk1z/skyeng_test/branch/master/graph/badge.svg)](https://codecov.io/gh/pk1z/skyeng_test)
+
 Задание: Проведите Code Review. Необходимо написать, с чем вы не согласны и почему.
 
 Дополнительное задание: Напишите свой вариант.
