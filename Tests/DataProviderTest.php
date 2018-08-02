@@ -43,7 +43,6 @@ final class EmailTest extends TestCase
         $response =  $dataProviderStub->get([1]);
         $time_end = microtime(true);
         $execution_time = ($time_end - $time_start);
-        echo $execution_time.PHP_EOL;
 
         $this->assertGreaterThanOrEqual(1, $execution_time);
 
@@ -51,7 +50,6 @@ final class EmailTest extends TestCase
         $response =  $cachedProvider->get([1]);
         $time_end = microtime(true);
         $execution_time = ($time_end - $time_start);
-        echo $execution_time.PHP_EOL;
 
         $this->assertGreaterThanOrEqual(1, $execution_time);
 
@@ -59,7 +57,6 @@ final class EmailTest extends TestCase
         $response =  $cachedProvider->get([1]);
         $time_end = microtime(true);
         $execution_time = ($time_end - $time_start);
-        echo $execution_time.PHP_EOL;
 
         $this->assertLessThanOrEqual(1, $execution_time);
 
