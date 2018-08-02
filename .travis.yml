@@ -9,5 +9,8 @@ php:
   - 7.0
   - 7.2
 
+install:
+   - composer install
+
 script: phpunit --configuration phpunit.xml
 
