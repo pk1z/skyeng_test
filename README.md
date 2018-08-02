@@ -9,7 +9,7 @@
 ```
 <?php
 
-namespace src\Integration;
+namespace src\Integration; //Нарушение PSR, путь 'src' лишний
 
 class DataProvider
 {
@@ -41,7 +41,7 @@ class DataProvider
 }
 <?php
 
-namespace src\Decorator;
+namespace src\Decorator; //Нарушение PSR, путь 'src' лишний
 
 use DateTime;
 use Exception;
@@ -49,6 +49,10 @@ use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
 use src\Integration\DataProvider;
 
+/**
+* нарушение принципа SingleResponsibility, если компонент отвечает и за
+* кэш, и за логгирование
+*/
 class DecoratorManager extends DataProvider
 {
     public $cache;
@@ -90,7 +94,9 @@ class DecoratorManager extends DataProvider
                 ->expiresAt(
                     (new DateTime())->modify('+1 day')
                 );
-
+            /**
+            * Здесь получанные данные нужно сохранить в cache.
+            */
             return $result;
         } catch (Exception $e) {
             $this->logger->critical('Error');
@@ -98,7 +104,10 @@ class DecoratorManager extends DataProvider
 
         return [];
     }
-
+    /**
+    * для создания ключа кэша необходимо использовать хэш ф-цию,
+    * c фиксированной длинной ключа, например sha или md5
+    */
     public function getCacheKey(array $input)
     {
         return json_encode($input);
@@ -106,11 +115,10 @@ class DecoratorManager extends DataProvider
 }
 ```
 
+#### Рефакторинг
 
 * кеш не работает, т.к. данные в него не сохраняются
 * кеш не работает, т.к. используется не ключ, а весь объект в json
-
 * код не реализует паттерн декоратор
 * нарушения PSR в неймспейсе ("src")
-
 * улучшения - вынесен в конструктор захардкоженный параметр времени кеша
