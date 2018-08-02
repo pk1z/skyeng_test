@@ -1,0 +1,27 @@
+{
+    "name": "pk1z/skyeng-test",
+    "description": "Refactored version of decorator for getting data from data provider with caching and logging abilities.",
+    "type": "project",
+    "require": {
+        "php": "7.2.*",
+        "psr/cache": "^1.0",
+        "psr/log": "^1.0",
+        "phpunit/phpunit": "^6.0",
+        "symfony/cache": "^4.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Safronov Svyatoslav",
+            "email": "safronov.stas@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.12"
+    }
+}

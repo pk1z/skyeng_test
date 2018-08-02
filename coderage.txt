@@ -1,0 +1,12 @@
+
+
+Code Coverage Report:    
+  2018-08-02 13:27:13    
+                         
+ Summary:                
+  Classes:  0.00% (0/3)  
+  Methods: 42.11% (8/19) 
+  Lines:   52.83% (28/53)
+
+\Skyeng\Decorator::Skyeng\Decorator\CacheDecorator
+  Methods:  72.73% ( 8/11)   Lines:  84.85% ( 28/ 33)

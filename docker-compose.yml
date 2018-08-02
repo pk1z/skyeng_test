@@ -1,0 +1,7 @@
+version: '3'
+services:
+    testing:
+        image: phpunit/phpunit
+        command: --configuration /app/phpunit.xml
+        volumes:
+        - ./:/app
